@@ -8,10 +8,13 @@ import { BrandsSection } from "./components/BrandsSection";
 import { CertificatesSection } from "./components/CertificatesSection";
 import { QuoteForm } from "./components/QuoteForm";
 import { BlogSection } from "./components/BlogSection";
+import { BlogDetailPage } from "./components/BlogDetailPage";
 import { Footer } from "./components/Footer";
 import { ClientsSection } from "./components/ClientsSection";
 import { VideoSection } from "./components/VideoSection";
 import { Routes, Route } from "react-router";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { VideoDetailPage } from "./components/VideoDetailPage";
 
 function Home() {
   return (
@@ -105,10 +108,13 @@ export default function App() {
       <div className="hex-pattern" />
 
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/video" element={<VideoPage />} />
+        <Route path="/video/:slug" element={<VideoDetailPage />} />
         <Route path="/tin-tuc" element={<BlogPage />} />
+        <Route path="/tin-tuc/:slug" element={<BlogDetailPage />} />
       </Routes>
       <Footer />
     </div>

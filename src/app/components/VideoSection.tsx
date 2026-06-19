@@ -1,30 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Play, Video } from "lucide-react";
+import { Link } from "react-router";
+import { VIDEOS } from "../data/videoData";
 
-const VIDEOS = [
-  {
-    title: "Thi công sơn sàn Epoxy nhà máy điện tử",
-    thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
-    duration: "03:45",
-  },
-  {
-    title: "Phủ PU chống thấm tầng hầm chung cư",
-    thumbnail: "https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=800&q=80",
-    duration: "02:20",
-  },
-  {
-    title: "Sơn Epoxy chống tĩnh điện phòng sạch",
-    thumbnail: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=800&q=80",
-    duration: "04:15",
-  },
-];
 
 export function VideoSection() {
   const ref = useRef<HTMLDivElement>(null);
   const [vis, setVis] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const [active, setActive] = useState<typeof VIDEOS[0] | null>(null);
 
   useEffect(() => {
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVis(true); }, { threshold: 0.1 });
@@ -67,10 +50,10 @@ export function VideoSection() {
             gap: "32px",
           }}>
             {VIDEOS.map((vid, i) => (
-              <div
+              <Link
+                to={`/video/${vid.slug}`}
                 className="metallic-border"
                 key={i}
-                onClick={() => setActive(vid)}
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 style={{
@@ -157,68 +140,12 @@ export function VideoSection() {
                     {vid.title}
                   </h3>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
         </div>
       </section>
-
-      {/* Video Modal */}
-      {active && (
-        <div style={{ position: "fixed", inset: 0, zIndex: 3000, display: "flex", alignItems: "center", justifyContent: "center" }} onClick={() => setActive(null)}>
-          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.9)", backdropFilter: "blur(10px)" }} />
-          <div 
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              position: "relative",
-              width: "min(1000px, 95vw)",
-              background: "#000",
-              borderRadius: "16px",
-              overflow: "hidden",
-              animation: "videoPop 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-              boxShadow: "0 25px 60px rgba(0,0,0,0.8)",
-            }}
-          >
-            <button
-              onClick={() => setActive(null)}
-              style={{
-                position: "absolute",
-                top: "16px",
-                right: "16px",
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                background: "rgba(255,255,255,0.1)",
-                border: "1px solid rgba(255,255,255,0.2)",
-                color: "#fff",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                zIndex: 10,
-                backdropFilter: "blur(4px)",
-              }}
-            >
-              <Play size={18} style={{ transform: "rotate(45deg)", marginLeft: "-2px" }} />
-            </button>
-            <div style={{ paddingTop: "56.25%", position: "relative", background: `url(${active.thumbnail}) center/cover` }}>
-              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.5)" }}>
-                <div style={{ textAlign: "center" }}>
-                  <div style={{ marginBottom: "16px", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}>Video Demo (Tính năng mẫu cho Landing Page)</div>
-                  <h3 style={{ color: "#fff", fontFamily: "'Montserrat', sans-serif", fontSize: "24px" }}>{active.title}</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      <style>{`
-        @keyframes videoPop {
-          from { transform: scale(0.95) translateY(20px); opacity: 0; }
-          to { transform: scale(1) translateY(0); opacity: 1; }
-        }
-      `}</style>
     </>
   );
 }
