@@ -526,7 +526,7 @@ export function HeroSlider() {
         <button
           key={dir}
           onClick={() => go(idx)}
-          className="hero-arrow-3d"
+          className={`hero-arrow-3d hero-arrow-${dir}`}
           style={{
             position: "absolute",
             top: "50%",
@@ -648,7 +648,15 @@ export function HeroSlider() {
             bottom: 40px !important;
           }
           .hero-arrow-3d {
-            display: none !important;
+            width: 40px !important;
+            height: 40px !important;
+            display: flex !important;
+          }
+          .hero-arrow-left {
+            left: 12px !important;
+          }
+          .hero-arrow-right {
+            right: 12px !important;
           }
         }
       `}</style>

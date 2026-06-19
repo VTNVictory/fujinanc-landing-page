@@ -58,6 +58,7 @@ function StatItem({ stat, active, index }: { stat: typeof STATS[0]; active: bool
         }}
       />
       <div
+        className="stat-val-mobile"
         style={{
           fontFamily: "'Montserrat', 'Be Vietnam Pro', sans-serif",
           fontSize: "64px",
@@ -68,9 +69,10 @@ function StatItem({ stat, active, index }: { stat: typeof STATS[0]; active: bool
         }}
       >
         <span style={{ color: index % 2 === 0 ? "#0077ff" : "#fff" }}>{count}</span>
-        <span style={{ color: "#e60012", fontSize: "40px" }}>{stat.suffix}</span>
+        <span className="stat-suffix-mobile" style={{ color: "#e60012", fontSize: "40px" }}>{stat.suffix}</span>
       </div>
       <div
+        className="stat-label-mobile"
         style={{
           fontFamily: "'DM Sans', sans-serif",
           fontSize: "14px",

@@ -112,6 +112,28 @@ const SERVICES = [
     ],
     highlights: ["Chứng chỉ PCCC", "Tư vấn kỹ thuật", "Vật liệu chính hãng", "Nhân công lành nghề"],
   },
+  {
+    id: "waterproofing",
+    title: "Sơn Chống Thấm",
+    short: "Tầng hầm, vách, hồ bơi",
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=550&fit=crop&auto=format",
+    color: "#00aaff",
+    tag: "Bảo vệ tối ưu",
+    tagBg: "#00aaff",
+    subServices: [
+      { name: "Chống Thấm Polyurethane", desc: "Màng chống thấm PU liền mạch, độ đàn hồi cực cao, chịu thời tiết." },
+      { name: "Chống Thấm Xi Măng Polymer", desc: "Hỗn hợp chống thấm 2 thành phần, bám dính cực tốt trên bê tông." },
+      { name: "Chống Thấm Màng Khò Nóng", desc: "Màng bitum khò nóng chống thấm tầng hầm, hố thang máy, sân thượng." },
+      { name: "Chống Thấm Bể Nước", desc: "Vật liệu an toàn không độc hại, chịu áp suất nước cao cho hồ bơi, bể ngầm." },
+    ],
+    process: ["Khảo sát & dò tìm nguồn thấm", "Đục tẩy, vệ sinh tới lớp bê tông đặc chắc", "Xử lý cổ ống, khe co giãn", "Thi công lớp chống thấm chuyên dụng", "Ngâm nước thử tải & nghiệm thu"],
+    gallery: [
+      "https://images.unsplash.com/photo-1541888087364-eb5df180e0c8?w=400&h=280&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&h=280&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&h=280&fit=crop&auto=format",
+    ],
+    highlights: ["Bảo hành lên đến 10 năm", "Chịu áp lực nước lớn", "Độ đàn hồi cao", "Kháng UV bền bỉ"],
+  },
 ];
 
 type Service = typeof SERVICES[0];
@@ -673,22 +695,16 @@ export function ServicesSection() {
 
         {/* Grid */}
         <div
-          className="grid-mobile-1 gap-mobile-sm"
+          className="grid-mobile-2 gap-mobile-sm"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
             gap: "20px",
           }}
         >
-          {SERVICES.slice(0, 3).map((svc, i) => (
+          {SERVICES.map((svc, i) => (
             <ServiceCard key={svc.id} svc={svc} index={i} onOpen={() => setActive(svc)} />
           ))}
-          {/* Last row: 2 cards centered */}
-          <div className="grid-mobile-1 gap-mobile-sm" style={{ gridColumn: "1 / -1", display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "20px", maxWidth: "760px", margin: "0 auto", width: "100%" }}>
-            {SERVICES.slice(3).map((svc, i) => (
-              <ServiceCard key={svc.id} svc={svc} index={i + 3} onOpen={() => setActive(svc)} />
-            ))}
-          </div>
         </div>
       </div>
 

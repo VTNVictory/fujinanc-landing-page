@@ -1,6 +1,7 @@
 import "../styles/fonts.css";
 import { Navbar } from "./components/Navbar";
 import { HeroSlider } from "./components/HeroSlider";
+import { AboutSection } from "./components/AboutSection";
 import { ServicesSection } from "./components/ServicesSection";
 import { PortfolioSection } from "./components/PortfolioSection";
 import { BrandsSection } from "./components/BrandsSection";
@@ -16,6 +17,7 @@ function Home() {
   return (
     <>
       <HeroSlider />
+      <AboutSection />
       <ServicesSection />
       <PortfolioSection />
       <BrandsSection />

@@ -28,7 +28,7 @@
   }
 
   .pad-mobile-sm {
-    padding: 24px 16px !important;
+    padding: 24px 8px !important; /* Reduced horizontal padding for stats */
   }
   
   .pad-sm-mobile {
@@ -36,7 +36,7 @@
   }
   
   .gap-mobile-sm {
-    gap: 16px !important;
+    gap: 8px !important; /* Reduced gap */
   }
 
   .border-none-mobile {
@@ -57,6 +57,18 @@
     font-size: 28px !important;
   }
 
+  .stat-val-mobile {
+    font-size: 36px !important;
+  }
+
+  .stat-suffix-mobile {
+    font-size: 24px !important;
+  }
+
+  .stat-label-mobile {
+    font-size: 12px !important;
+  }
+
   /* Specific overrides */
   .w-full-mobile {
     width: 100% !important;
@@ -65,10 +77,6 @@
   
   .br-0-mobile {
     border-radius: 0 !important;
-  }
-  
-  .border-none-mobile {
-    border: none !important;
   }
 }
 
@@ -85,4 +93,17 @@
   .grid-mobile-2-to-1 {
     grid-template-columns: 1fr !important;
   }
+
+  .stat-val-mobile {
+    font-size: 28px !important;
+  }
+
+  .stat-suffix-mobile {
+    font-size: 20px !important;
+  }
+
+  .stat-label-mobile {
+    font-size: 11px !important;
+  }
 }
+

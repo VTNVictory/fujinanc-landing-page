@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Phone, Menu, X, ChevronDown, MessageCircle, Download, Paintbrush, ShieldCheck, Layers, Construction, Award, MapPin, Clock, Sparkles } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, MessageCircle, Download, Paintbrush, ShieldCheck, Layers, Construction, Award, MapPin, Clock, Sparkles, Droplets } from "lucide-react";
 import { Logo } from "./Logo";
 
 const SERVICES_LIST = [
@@ -7,11 +7,13 @@ const SERVICES_LIST = [
   { title: "Sơn Sân Thể Thao", desc: "Sân tennis, cầu lông, bóng rổ đạt chuẩn", icon: Award, href: "/#services", color: "#10b981" },
   { title: "Sơn Giao Thông & Kẻ Vạch", desc: "Sơn phản quang, dẻo nhiệt, phân làn", icon: Construction, href: "/#services", color: "#f59e0b" },
   { title: "Sơn Chống Cháy & Chuyên Dụng", desc: "Bảo vệ kết cấu thép, PCCC, chống ăn mòn", icon: ShieldCheck, href: "/#services", color: "#ef4444" },
+  { title: "Sơn Chống Thấm", desc: "Bảo vệ tầng hầm, sân thượng, hồ bơi", icon: Droplets, href: "/#services", color: "#0ea5e9" },
   { title: "Mài Sàn & Đánh Bóng Bê Tông", desc: "Tăng cứng, mài mịn sàn bê tông công nghiệp", icon: Paintbrush, href: "/#services", color: "#8b5cf6" },
 ];
 
 const NAV = [
   { label: "Trang Chủ", href: "/#home" },
+  { label: "Giới Thiệu", href: "/#about" },
   { label: "Dịch Vụ", href: "/#services", sub: SERVICES_LIST },
   { label: "Dự Án", href: "/#portfolio" },
   { label: "Đối Tác", href: "/#brands" },
@@ -72,17 +74,17 @@ export function Navbar() {
         }}>
           <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
             <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-              <MapPin size={10} /> 12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM
+              <MapPin size={10} /> 45 Màu Thân, P. Cái Khế, TP. Cần Thơ
             </span>
             <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
               <Clock size={10} /> T2 - T7: 7:30 - 17:30
             </span>
           </div>
           <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-            <a href="mailto:info@thicongson.com" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s" }}
+            <a href="mailto:info@fujinano.vn" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>
-              info@thicongson.com
+              info@fujinano.vn
             </a>
             <a href="tel:0947707616" style={{ color: "#ff4455", textDecoration: "none", fontWeight: 600, display: "flex", alignItems: "center", gap: "4px" }}>
               <Phone size={10} /> 0947.707.616
@@ -209,80 +211,80 @@ export function Navbar() {
                           animation: "dropReveal 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                           overflow: "hidden",
                         }}>
-                        {/* Decorative top glow */}
-                        <div style={{
-                          position: "absolute",
-                          top: "-20px",
-                          left: "50%",
-                          width: "160px",
-                          height: "40px",
-                          background: "rgba(230, 0, 18, 0.15)",
-                          filter: "blur(30px)",
-                          transform: "translateX(-50%)",
-                          pointerEvents: "none",
-                        }} />
+                          {/* Decorative top glow */}
+                          <div style={{
+                            position: "absolute",
+                            top: "-20px",
+                            left: "50%",
+                            width: "160px",
+                            height: "40px",
+                            background: "rgba(230, 0, 18, 0.15)",
+                            filter: "blur(30px)",
+                            transform: "translateX(-50%)",
+                            pointerEvents: "none",
+                          }} />
 
-                        <div style={{ padding: "12px 16px 8px", display: "flex", alignItems: "center", gap: "6px" }}>
-                          <Sparkles size={12} color="#ff4455" />
-                          <span style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.35)", fontWeight: 700, fontFamily: "'DM Sans', sans-serif" }}>
-                            Dịch Vụ Chuyên Nghiệp
-                          </span>
-                        </div>
+                          <div style={{ padding: "12px 16px 8px", display: "flex", alignItems: "center", gap: "6px" }}>
+                            <Sparkles size={12} color="#ff4455" />
+                            <span style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.35)", fontWeight: 700, fontFamily: "'DM Sans', sans-serif" }}>
+                              Dịch Vụ Chuyên Nghiệp
+                            </span>
+                          </div>
 
-                        {item.sub.map((subItem, si) => {
-                          const IconComp = subItem.icon;
-                          return (
-                            <a
-                              key={subItem.title}
-                              href={subItem.href}
-                              className="dropdown-item-3d"
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "14px",
-                                padding: "14px 16px",
-                                textDecoration: "none",
-                                borderRadius: "14px",
-                                transition: "all 0.2s ease",
-                                position: "relative",
-                                overflow: "hidden",
-                              }}
-                              onMouseEnter={(e) => {
-                                const el = e.currentTarget;
-                                el.style.background = `${subItem.color}15`;
-                                el.style.transform = "translateX(6px)";
-                              }}
-                              onMouseLeave={(e) => {
-                                const el = e.currentTarget;
-                                el.style.background = "transparent";
-                                el.style.transform = "translateX(0)";
-                              }}
-                            >
-                              <div style={{
-                                width: "42px",
-                                height: "42px",
-                                borderRadius: "12px",
-                                background: `linear-gradient(135deg, ${subItem.color}22, ${subItem.color}0a)`,
-                                border: `1px solid ${subItem.color}33`,
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                flexShrink: 0,
-                                transition: "all 0.25s",
-                              }}>
-                                <IconComp size={18} color={subItem.color} />
-                              </div>
-                              <div>
-                                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, color: "#fff", marginBottom: "2px" }}>
-                                  {subItem.title}
+                          {item.sub.map((subItem, si) => {
+                            const IconComp = subItem.icon;
+                            return (
+                              <a
+                                key={subItem.title}
+                                href={subItem.href}
+                                className="dropdown-item-3d"
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                  gap: "14px",
+                                  padding: "14px 16px",
+                                  textDecoration: "none",
+                                  borderRadius: "14px",
+                                  transition: "all 0.2s ease",
+                                  position: "relative",
+                                  overflow: "hidden",
+                                }}
+                                onMouseEnter={(e) => {
+                                  const el = e.currentTarget;
+                                  el.style.background = `${subItem.color}15`;
+                                  el.style.transform = "translateX(6px)";
+                                }}
+                                onMouseLeave={(e) => {
+                                  const el = e.currentTarget;
+                                  el.style.background = "transparent";
+                                  el.style.transform = "translateX(0)";
+                                }}
+                              >
+                                <div style={{
+                                  width: "42px",
+                                  height: "42px",
+                                  borderRadius: "12px",
+                                  background: `linear-gradient(135deg, ${subItem.color}22, ${subItem.color}0a)`,
+                                  border: `1px solid ${subItem.color}33`,
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  flexShrink: 0,
+                                  transition: "all 0.25s",
+                                }}>
+                                  <IconComp size={18} color={subItem.color} />
                                 </div>
-                                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11.5px", color: "rgba(255,255,255,0.55)" }}>
-                                  {subItem.desc}
+                                <div>
+                                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, color: "#fff", marginBottom: "2px" }}>
+                                    {subItem.title}
+                                  </div>
+                                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11.5px", color: "rgba(255,255,255,0.55)" }}>
+                                    {subItem.desc}
+                                  </div>
                                 </div>
-                              </div>
-                            </a>
-                          );
-                        })}
+                              </a>
+                            );
+                          })}
                         </div>
                       </div>
                     )}
