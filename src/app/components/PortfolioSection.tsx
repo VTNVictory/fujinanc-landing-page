@@ -1,70 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { MapPin, ArrowRight } from "lucide-react";
+import { Link } from "react-router";
+import { PORTFOLIO_PROJECTS } from "../data/portfolioProjects";
 
-const PROJECTS = [
-  {
-    img: "https://images.unsplash.com/photo-1772209415876-76ea6cbc2f0c?w=800&h=560&fit=crop&auto=format",
-    client: "Vietjet Air",
-    title: "Sơn Epoxy Nhà Ga Bảo Dưỡng",
-    location: "Nội Bài, Hà Nội",
-    area: "18.000 m²",
-    service: "Epoxy Tự San Phẳng",
-    serviceColor: "#0055cc",
-    span: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1771531072574-af6ed6b954c0?w=560&h=560&fit=crop&auto=format",
-    client: "Chin-su Food",
-    title: "Sơn Sàn Nhà Máy Thực Phẩm",
-    location: "Bình Dương",
-    area: "12.000 m²",
-    service: "Epoxy Chống Vi Khuẩn",
-    serviceColor: "#00aa55",
-    span: 1,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1772305595483-6b058aff40f9?w=560&h=560&fit=crop&auto=format",
-    client: "Isuzu Việt Nam",
-    title: "Sàn Xưởng Lắp Ráp Ô Tô",
-    location: "Long Biên, Hà Nội",
-    area: "8.500 m²",
-    service: "Epoxy Chống Trượt",
-    serviceColor: "#0055cc",
-    span: 1,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=560&h=420&fit=crop&auto=format",
-    client: "Cantavil Hoàn Cầu",
-    title: "Sơn Ngoại Thất Chung Cư Cao Cấp",
-    location: "TP. Hồ Chí Minh",
-    area: "22.000 m²",
-    service: "Sơn Ngoại Thất",
-    serviceColor: "#e60012",
-    span: 1,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1669674309145-52b17350b769?w=560&h=420&fit=crop&auto=format",
-    client: "KCN Trà Nóc",
-    title: "Kẻ Vạch Toàn Bộ Khu Công Nghiệp",
-    location: "Cần Thơ",
-    area: "35.000 m²",
-    service: "Sơn Giao Thông",
-    serviceColor: "#ff8800",
-    span: 1,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1780221841229-ec9922aee812?w=800&h=420&fit=crop&auto=format",
-    client: "Trung Tâm TDTT Quận 7",
-    title: "Sân Thể Thao Đa Năng",
-    location: "TP. Hồ Chí Minh",
-    area: "3.200 m²",
-    service: "Sơn Sân Thể Thao",
-    serviceColor: "#00aa55",
-    span: 2,
-  },
-];
-
-function ProjectCard({ p, i }: { p: typeof PROJECTS[0]; i: number }) {
+function ProjectCard({ p, i }: { p: typeof PORTFOLIO_PROJECTS[0]; i: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [vis, setVis] = useState(false);
   const [hov, setHov] = useState(false);
@@ -81,11 +20,11 @@ function ProjectCard({ p, i }: { p: typeof PROJECTS[0]; i: number }) {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     // Normalize coordinates from -10 to 10 degrees
     const xc = ((x / rect.width) - 0.5) * 12;
     const yc = ((y / rect.height) - 0.5) * -12;
-    
+
     setCoords({ x: xc, y: yc });
   };
 
@@ -108,8 +47,8 @@ function ProjectCard({ p, i }: { p: typeof PROJECTS[0]; i: number }) {
         position: "relative",
         height: "320px",
         cursor: "pointer",
-        boxShadow: hov 
-          ? "0 28px 60px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.05)" 
+        boxShadow: hov
+          ? "0 28px 60px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.05)"
           : "0 6px 20px rgba(0,0,0,0.06)",
         transform: hov
           ? `perspective(1000px) rotateY(${coords.x}deg) rotateX(${coords.y}deg) scale3d(1.025, 1.025, 1.025)`
@@ -141,7 +80,7 @@ function ProjectCard({ p, i }: { p: typeof PROJECTS[0]; i: number }) {
           transition: "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       />
-      
+
       <div
         style={{
           position: "absolute",
@@ -178,11 +117,11 @@ function ProjectCard({ p, i }: { p: typeof PROJECTS[0]; i: number }) {
       </div>
 
       {/* Bottom info */}
-      <div style={{ 
-        position: "absolute", 
-        bottom: 0, 
-        left: 0, 
-        right: 0, 
+      <div style={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        right: 0,
         padding: "24px",
         zIndex: 2,
         transform: "translateZ(30px)",
@@ -246,8 +185,6 @@ export function PortfolioSection() {
   const ref = useRef<HTMLDivElement>(null);
   const [vis, setVis] = useState(false);
 
-  const [active, setActive] = useState<typeof PROJECTS[0] | null>(null);
-
   useEffect(() => {
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVis(true); }, { threshold: 0.1 });
     if (ref.current) obs.observe(ref.current);
@@ -305,95 +242,16 @@ export function PortfolioSection() {
 
           {/* Grid */}
           <div className="grid-mobile-1 gap-mobile-sm" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
-            {PROJECTS.map((p, i) => (
-              <div key={p.title} onClick={() => setActive(p)}>
+            {PORTFOLIO_PROJECTS.map((p, i) => (
+              <Link to={`/du-an/${p.slug}`} key={p.title} style={{ textDecoration: "none", color: "inherit", display: "block", outline: "none" }}>
                 <ProjectCard p={p} i={i} />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Project Detail Modal */}
-      {active && (
-        <div style={{ position: "fixed", inset: 0, zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center" }} onClick={() => setActive(null)}>
-          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.7)", backdropFilter: "blur(5px)" }} />
-          <div 
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              position: "relative",
-              width: "min(900px, 90vw)",
-              maxHeight: "90vh",
-              background: "#020B1D",
-              borderRadius: "20px",
-              border: "1px solid rgba(255,255,255,0.1)",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              animation: "modalPop 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-            }}
-          >
-            <div style={{ position: "relative", height: "350px", flexShrink: 0 }}>
-              <img src={active.img} alt={active.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              <button
-                onClick={() => setActive(null)}
-                style={{
-                  position: "absolute",
-                  top: "20px",
-                  right: "20px",
-                  width: "40px",
-                  height: "40px",
-                  borderRadius: "50%",
-                  background: "rgba(0,11,32,0.9)",
-                  border: "1px solid rgba(255,255,255,0.2)",
-                  color: "#fff",
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
-                }}
-              >
-                <ArrowRight size={18} style={{ transform: "rotate(135deg)" }} />
-              </button>
-            </div>
-            <div style={{ padding: "40px", overflowY: "auto" }}>
-              <div style={{ display: "inline-block", background: active.serviceColor, color: "#fff", padding: "4px 12px", borderRadius: "4px", fontSize: "11px", fontWeight: 700, textTransform: "uppercase", marginBottom: "16px", fontFamily: "'DM Sans', sans-serif" }}>
-                {active.service}
-              </div>
-              <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "32px", fontWeight: 800, color: "#fff", marginBottom: "16px" }}>
-                {active.title}
-              </h2>
-              <div style={{ display: "flex", gap: "24px", marginBottom: "32px", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "24px" }}>
-                <div>
-                  <div style={{ fontSize: "12px", color: "#94a3b8", marginBottom: "4px", fontFamily: "'DM Sans', sans-serif" }}>Khách hàng</div>
-                  <div style={{ fontSize: "15px", fontWeight: 600, color: "#f8fafc", fontFamily: "'DM Sans', sans-serif" }}>{active.client}</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: "12px", color: "#94a3b8", marginBottom: "4px", fontFamily: "'DM Sans', sans-serif" }}>Vị trí</div>
-                  <div style={{ fontSize: "15px", fontWeight: 600, color: "#f8fafc", fontFamily: "'DM Sans', sans-serif" }}>{active.location}</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: "12px", color: "#94a3b8", marginBottom: "4px", fontFamily: "'DM Sans', sans-serif" }}>Quy mô</div>
-                  <div style={{ fontSize: "15px", fontWeight: 600, color: "#f8fafc", fontFamily: "'DM Sans', sans-serif" }}>{active.area}</div>
-                </div>
-              </div>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "rgba(255,255,255,0.7)", lineHeight: 1.75, fontWeight: 300, maxWidth: "500px" }}>
-                Dự án {active.title} là một trong những công trình tiêu biểu của chúng tôi trong năm vừa qua. Với yêu cầu khắt khe về chất lượng và tiến độ từ chủ đầu tư {active.client}, đội ngũ kỹ thuật đã áp dụng quy trình thi công {active.service} tiên tiến nhất, đảm bảo bề mặt hoàn thiện đạt chuẩn quốc tế, đáp ứng mọi bài test về độ bền, khả năng chịu tải và tính thẩm mỹ.
-              </p>
-              <a href="#quote" onClick={() => setActive(null)} style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "14px 28px", background: "#e60012", color: "#fff", borderRadius: "8px", textDecoration: "none", fontWeight: 600, fontFamily: "'DM Sans', sans-serif", transition: "all 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-2px)")} onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}>
-                Liên hệ thi công tương tự <ArrowRight size={16} />
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-      <style>{`
-        @keyframes modalPop {
-          from { transform: scale(0.95); opacity: 0; }
-          to { transform: scale(1); opacity: 1; }
-        }
-      `}</style>
+
     </>
   );
 }

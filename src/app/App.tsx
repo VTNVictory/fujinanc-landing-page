@@ -15,6 +15,7 @@ import { VideoSection } from "./components/VideoSection";
 import { Routes, Route } from "react-router";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { VideoDetailPage } from "./components/VideoDetailPage";
+import { PortfolioDetailPage } from "./components/PortfolioDetailPage";
 
 function Home() {
   return (
@@ -111,6 +112,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/du-an/:slug" element={<PortfolioDetailPage />} />
         <Route path="/video" element={<VideoPage />} />
         <Route path="/video/:slug" element={<VideoDetailPage />} />
         <Route path="/tin-tuc" element={<BlogPage />} />

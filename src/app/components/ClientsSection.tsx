@@ -60,7 +60,7 @@ export function ClientsSection() {
         }
       `}</style>
       <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 32px", textAlign: "center" }}>
-        
+
         <div style={{
           marginBottom: "56px",
           opacity: vis ? 1 : 0,
@@ -73,12 +73,12 @@ export function ClientsSection() {
               Đối Tác Khách Hàng
             </p>
           </div>
-          <h2 style={{ 
-            fontFamily: "'Be Vietnam Pro', sans-serif", 
-            fontSize: "clamp(32px, 3.5vw, 44px)", 
-            fontWeight: 800, 
-            color: "#fff", 
-            letterSpacing: "0.3px" 
+          <h2 style={{
+            fontFamily: "'Be Vietnam Pro', sans-serif",
+            fontSize: "clamp(32px, 3.5vw, 44px)",
+            fontWeight: 800,
+            color: "#fff",
+            letterSpacing: "0.3px"
           }}>
             KHÁCH HÀNG TIÊU BIỂU
           </h2>
@@ -86,7 +86,7 @@ export function ClientsSection() {
 
       </div>
 
-      <div style={{ 
+      <div style={{
         position: "relative",
         opacity: vis ? 1 : 0,
         transition: "all 0.8s ease 0.4s",
@@ -94,7 +94,7 @@ export function ClientsSection() {
         {/* Gradient overlays for smooth fading edges */}
         <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "150px", background: "linear-gradient(to right, #010A1C, transparent)", zIndex: 2, pointerEvents: "none" }} />
         <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "150px", background: "linear-gradient(to left, #010A1C, transparent)", zIndex: 2, pointerEvents: "none" }} />
-        
+
         <div className="marquee-container">
           {[...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS].map((c, i) => (
             <div key={i} className="client-logo-box metallic-border" style={{ borderRadius: "16px" }}>

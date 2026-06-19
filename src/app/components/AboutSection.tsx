@@ -22,9 +22,9 @@ export function AboutSection() {
     <section id="about" className="pad-section-mobile" style={{ padding: "100px 0", background: "transparent", position: "relative" }} ref={ref}>
       <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 32px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }} className="grid-mobile-1">
-          
+
           {/* Left: Text content */}
-          <div style={{ 
+          <div style={{
             opacity: vis ? 1 : 0,
             transform: vis ? "translateX(0)" : "translateX(-40px)",
             transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)"
@@ -42,7 +42,7 @@ export function AboutSection() {
                 CÂU CHUYỆN THƯƠNG HIỆU
               </p>
             </div>
-            
+
             <h2 style={{
               fontFamily: "'Montserrat', sans-serif",
               fontSize: "clamp(32px, 4vw, 48px)",
@@ -54,7 +54,7 @@ export function AboutSection() {
               KIẾN TẠO BỀ MẶT <br />
               <span style={{ color: "#e60012" }}>HOÀN HẢO</span>
             </h2>
-            
+
             <p style={{
               fontFamily: "'DM Sans', sans-serif",
               fontSize: "16px",
@@ -93,14 +93,14 @@ export function AboutSection() {
                   transition: "all 0.3s ease",
                   cursor: "default"
                 }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.06)";
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.03)";
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}>
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.06)";
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.03)";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}>
                   <span style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: "28px", fontWeight: 800, color: "#e60012" }}>{s.val}</span>
                   <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 500, color: "rgba(255,255,255,0.6)" }}>{s.label}</span>
                 </div>
@@ -109,7 +109,7 @@ export function AboutSection() {
           </div>
 
           {/* Right: Dual Image side */}
-          <div style={{ 
+          <div style={{
             opacity: vis ? 1 : 0,
             transform: vis ? "translateX(0)" : "translateX(40px)",
             transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s",
@@ -121,13 +121,13 @@ export function AboutSection() {
             justifyContent: "center"
           }}>
             {/* Background glow */}
-            <div style={{ 
-              position: "absolute", 
-              top: "50%", 
-              left: "50%", 
-              transform: "translate(-50%, -50%)", 
-              width: "80%", 
-              height: "80%", 
+            <div style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "80%",
+              height: "80%",
               background: "radial-gradient(circle, rgba(0,85,204,0.15) 0%, transparent 70%)",
               zIndex: 0
             }} />
@@ -145,8 +145,8 @@ export function AboutSection() {
               boxShadow: "0 20px 40px rgba(0,0,0,0.6)",
               border: "1px solid rgba(255,255,255,0.05)"
             }}>
-              <img 
-                src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=600&h=800&fit=crop&auto=format" 
+              <img
+                src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=600&h=800&fit=crop&auto=format"
                 alt="Chuyên gia thi công"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -165,8 +165,8 @@ export function AboutSection() {
               boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
               border: "1px solid rgba(255,255,255,0.05)"
             }}>
-              <img 
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=750&fit=crop&auto=format" 
+              <img
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=750&fit=crop&auto=format"
                 alt="Công nghệ hiện đại"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />

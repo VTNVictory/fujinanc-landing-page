@@ -90,14 +90,14 @@ export function BlogSection() {
                     borderRadius: "14px",
                     overflow: "hidden",
                     boxShadow: hov ? "0 20px 48px rgba(0,0,0,0.12)" : "0 4px 16px rgba(0,0,0,0.06)",
-                    transform: vis 
-                      ? (hov 
-                        ? `translateY(-6px) perspective(1000px) rotateY(${coords.x}deg) rotateX(${coords.y}deg) scale3d(1.02, 1.02, 1.02)` 
-                        : "translateY(0) perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)") 
+                    transform: vis
+                      ? (hov
+                        ? `translateY(-6px) perspective(1000px) rotateY(${coords.x}deg) rotateX(${coords.y}deg) scale3d(1.02, 1.02, 1.02)`
+                        : "translateY(0) perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)")
                       : "translateY(28px) scale(0.95)",
                     opacity: vis ? 1 : 0,
-                    transition: hov 
-                      ? "transform 0.1s ease-out, box-shadow 0.3s ease" 
+                    transition: hov
+                      ? "transform 0.1s ease-out, box-shadow 0.3s ease"
                       : `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease, box-shadow 0.3s ease`,
                     transformStyle: "preserve-3d",
                     cursor: "pointer",

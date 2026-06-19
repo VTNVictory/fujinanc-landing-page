@@ -39,7 +39,7 @@ function StatCard3D({ num, label, i, active, color }: { num: string; label: stri
   const numericVal = parseInt(num.replace(/\D/g, ""), 10);
   const suffix = num.replace(/\d/g, "");
   const count = useCountUp(numericVal, active);
-  
+
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
 
@@ -65,13 +65,13 @@ function StatCard3D({ num, label, i, active, color }: { num: string; label: stri
         borderRadius: "16px",
         padding: "36px 20px",
         textAlign: "center",
-        transform: hovered 
+        transform: hovered
           ? `perspective(800px) rotateY(${coords.x}deg) rotateX(${coords.y}deg) scale3d(1.04, 1.04, 1.04)`
           : "perspective(800px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)",
         transition: hovered ? "none" : "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
         opacity: active ? 1 : 0,
         transformStyle: "preserve-3d",
-        boxShadow: hovered 
+        boxShadow: hovered
           ? `0 20px 45px rgba(0,0,0,0.55), 0 0 25px ${color}33`
           : "0 10px 30px rgba(0, 0, 0, 0.15)",
         cursor: "default",
@@ -92,10 +92,10 @@ function StatCard3D({ num, label, i, active, color }: { num: string; label: stri
         {count}
         <span style={{ color: color }}>{suffix}</span>
       </div>
-      <div style={{ 
-        fontFamily: "'DM Sans', sans-serif", 
-        fontSize: "13.5px", 
-        color: "rgba(255,255,255,0.55)", 
+      <div style={{
+        fontFamily: "'DM Sans', sans-serif",
+        fontSize: "13.5px",
+        color: "rgba(255,255,255,0.55)",
         fontWeight: 500,
         transform: "translateZ(15px)",
         transition: "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -131,11 +131,11 @@ function BrandCard3D({ b, i, active }: { b: typeof BRANDS[0]; i: number; active:
         borderRadius: "14px",
         padding: "28px 20px",
         textAlign: "center",
-        boxShadow: hovered 
-          ? `0 20px 45px rgba(0,0,0,0.12), 0 0 24px ${b.glow}` 
+        boxShadow: hovered
+          ? `0 20px 45px rgba(0,0,0,0.12), 0 0 24px ${b.glow}`
           : "0 4px 16px rgba(0,0,0,0.04)",
         cursor: "default",
-        transform: hovered 
+        transform: hovered
           ? `perspective(800px) rotateY(${coords.x}deg) rotateX(${coords.y}deg) scale3d(1.05, 1.05, 1.05)`
           : "perspective(800px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)",
         transition: hovered ? "none" : "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -197,20 +197,20 @@ function BrandCard3D({ b, i, active }: { b: typeof BRANDS[0]; i: number; active:
         </span>
       </div>
 
-      <div style={{ 
-        fontFamily: "'Be Vietnam Pro', sans-serif", 
-        fontSize: "22px", 
-        fontWeight: 800, 
-        color: "#fff", 
+      <div style={{
+        fontFamily: "'Be Vietnam Pro', sans-serif",
+        fontSize: "22px",
+        fontWeight: 800,
+        color: "#fff",
         marginBottom: "4px",
         transform: "translateZ(15px)"
       }}>
         {b.name}
       </div>
-      
-      <div style={{ 
-        fontFamily: "'DM Sans', sans-serif", 
-        fontSize: "12.5px", 
+
+      <div style={{
+        fontFamily: "'DM Sans', sans-serif",
+        fontSize: "12.5px",
         color: "rgba(255,255,255,0.55)",
         transform: "translateZ(10px)"
       }}>
@@ -233,7 +233,7 @@ export function BrandsSection() {
   return (
     <section id="brands" className="pad-section-mobile" style={{ background: "transparent", padding: "100px 0" }} ref={ref}>
       <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 32px" }}>
-        
+
         {/* 3D Glassmorphic Stats Grid */}
         <div
           className="grid-mobile-2 gap-mobile-sm"
@@ -272,22 +272,22 @@ export function BrandsSection() {
               Đối Tác Chính Hãng
             </p>
           </div>
-          <h2 style={{ 
-            fontFamily: "'Be Vietnam Pro', sans-serif", 
-            fontSize: "clamp(32px, 3.5vw, 44px)", 
-            fontWeight: 800, 
-            color: "#fff", 
-            letterSpacing: "0.3px" 
+          <h2 style={{
+            fontFamily: "'Be Vietnam Pro', sans-serif",
+            fontSize: "clamp(32px, 3.5vw, 44px)",
+            fontWeight: 800,
+            color: "#fff",
+            letterSpacing: "0.3px"
           }}>
             ỦY QUYỀN PHÂN PHỐI & THI CÔNG CHÍNH HÃNG
           </h2>
         </div>
 
         {/* 3D Glow Brand Cards Grid */}
-        <div className="grid-mobile-2 gap-mobile-sm" style={{ 
-          display: "grid", 
-          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", 
-          gap: "20px" 
+        <div className="grid-mobile-2 gap-mobile-sm" style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+          gap: "20px"
         }}>
           {BRANDS.map((b, i) => (
             <BrandCard3D key={b.name} b={b} i={i} active={vis} />
