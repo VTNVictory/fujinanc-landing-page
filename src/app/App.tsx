@@ -50,10 +50,10 @@ export default function App() {
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; font-size: 16px; }
-        body { background-color: #000B20; color: #fff; }
+        body { background-color: #001A5C; color: #fff; }
         a { text-decoration: none; }
         ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #000B20; }
+        ::-webkit-scrollbar-track { background: #001A5C; }
         ::-webkit-scrollbar-thumb { background: #0055cc; border-radius: 3px; }
         input, select, button { font-family: inherit; }
 
@@ -61,7 +61,7 @@ export default function App() {
           position: fixed;
           inset: 0;
           z-index: -10;
-          background: radial-gradient(circle at 50% 0%, #002255 0%, #000B20 80%);
+          background: radial-gradient(circle at 50% 0%, #0044AA 0%, #001A5C 40%, #000E3A 100%);
           pointer-events: none;
         }
         .hex-pattern {
@@ -76,7 +76,7 @@ export default function App() {
         .metallic-border {
           border: 1.5px solid transparent;
           background: 
-            linear-gradient(rgba(0, 11, 32, 0.7), rgba(0, 11, 32, 0.7)) padding-box,
+            linear-gradient(rgba(0, 20, 70, 0.75), rgba(0, 20, 70, 0.75)) padding-box,
             linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.05) 20%, rgba(0,85,204,0.4) 50%, rgba(255,255,255,0.05) 80%, rgba(255,255,255,0.6) 100%) border-box;
         }
 

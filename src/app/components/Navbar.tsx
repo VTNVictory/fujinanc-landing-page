@@ -102,7 +102,7 @@ export function Navbar() {
           left: 0,
           right: 0,
           zIndex: 999,
-          height: "72px",
+          height: "90px",
           transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       >
@@ -110,7 +110,7 @@ export function Navbar() {
         <div style={{
           position: "absolute",
           inset: 0,
-          background: scrolled ? "rgba(1, 8, 20, 0.92)" : "rgba(1, 8, 20, 0.4)",
+          background: scrolled ? "rgba(0, 15, 60, 0.96)" : "rgba(0, 15, 60, 0.5)",
           backdropFilter: "blur(20px) saturate(1.8)",
           WebkitBackdropFilter: "blur(20px) saturate(1.8)",
           transition: "background 0.4s ease",
@@ -150,11 +150,11 @@ export function Navbar() {
             <Logo size="md" dark={false} />
             <div className="logo-glow" style={{
               position: "absolute",
-              width: "60px",
+              width: "120px",
               height: "60px",
               borderRadius: "50%",
-              background: "rgba(230, 0, 18, 0.12)",
-              filter: "blur(20px)",
+              background: "radial-gradient(ellipse, rgba(230,0,18,0.15) 0%, rgba(0,85,204,0.08) 60%, transparent 100%)",
+              filter: "blur(16px)",
               left: "50%",
               top: "50%",
               transform: "translate(-50%, -50%)",
@@ -202,7 +202,7 @@ export function Navbar() {
                       <div style={{ position: "absolute", top: "100%", left: "-120px", paddingTop: "8px" }}>
                         <div className="mega-dropdown" style={{
                           width: "420px",
-                          background: "rgba(1, 10, 28, 0.97)",
+                          background: "rgba(0, 20, 75, 0.97)",
                           backdropFilter: "blur(24px) saturate(1.5)",
                           border: "1px solid rgba(255,255,255,0.08)",
                           borderRadius: "20px",
@@ -397,7 +397,7 @@ export function Navbar() {
             top: "100%",
             left: 0,
             right: 0,
-            background: "rgba(1, 8, 20, 0.98)",
+            background: "rgba(0, 15, 65, 0.98)",
             backdropFilter: "blur(24px)",
             borderTop: "1px solid rgba(255,255,255,0.06)",
             padding: "16px 24px 28px",

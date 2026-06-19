@@ -78,6 +78,39 @@
   .br-0-mobile {
     border-radius: 0 !important;
   }
+
+  /* Quote Form Optims */
+  .pad-form-mobile {
+    padding: 24px !important;
+  }
+  
+  .form-grid-mobile {
+    /* Side-by-side by default, unless overridden on smaller screens below */
+  }
+  
+  .branches-scroll-mobile {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    padding-bottom: 12px !important;
+    margin-right: -24px !important;
+    padding-right: 24px !important;
+  }
+  .branches-scroll-mobile::-webkit-scrollbar {
+    height: 4px;
+  }
+  .branches-scroll-mobile::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+  }
+  .branches-scroll-mobile::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+  }
+  .branches-scroll-mobile > div {
+    min-width: 85vw !important;
+    scroll-snap-align: center !important;
+    flex-shrink: 0 !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -104,6 +137,10 @@
 
   .stat-label-mobile {
     font-size: 11px !important;
+  }
+
+  .form-grid-mobile {
+    grid-template-columns: 1fr !important;
   }
 }
 

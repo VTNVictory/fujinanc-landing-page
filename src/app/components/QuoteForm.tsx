@@ -109,8 +109,9 @@ export function QuoteForm() {
         <div className="grid-mobile-1 gap-mobile-sm" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "start" }}>
           {/* Left: form */}
           <div
-            className="metallic-border"
+            className="metallic-border pad-form-mobile"
             style={{
+              minWidth: 0,
               opacity: vis ? 1 : 0,
               transform: vis ? "translateX(0) scale(1)" : "translateX(-24px) scale(0.95)",
               transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -124,7 +125,7 @@ export function QuoteForm() {
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", fontWeight: 700, color: "#e60012", letterSpacing: "2.5px", textTransform: "uppercase", marginBottom: "10px" }}>
               Nhận Báo Giá
             </p>
-            <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "44px", fontWeight: 800, color: "#fff", lineHeight: 1.3, marginBottom: "12px", letterSpacing: "-0.3px" }}>
+            <h2 className="heading-xl-mobile" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "44px", fontWeight: 800, color: "#fff", lineHeight: 1.3, marginBottom: "12px", letterSpacing: "-0.3px" }}>
               Báo Giá Miễn Phí<br /><span style={{ color: "#0077ff" }}>Trong 2 Giờ</span>
             </h2>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: "32px", fontWeight: 300 }}>
@@ -151,7 +152,7 @@ export function QuoteForm() {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div className="grid-mobile-1" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+                <div className="form-grid-mobile" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
                   {[
                     { key: "name", label: "Họ & Tên *", placeholder: "Nguyễn Văn A", type: "text" },
                     { key: "phone", label: "Số Điện Thoại *", placeholder: "0912 345 678", type: "tel" },
@@ -224,7 +225,7 @@ export function QuoteForm() {
                 </div>
 
                 {/* Area + note */}
-                <div className="grid-mobile-1" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+                <div className="form-grid-mobile" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
                   <div>
                     <label style={{ display: "block", fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,0.7)", marginBottom: "6px" }}>
                       Diện Tích (m²)
@@ -318,6 +319,7 @@ export function QuoteForm() {
           {/* Right: contact + branches */}
           <div
             style={{
+              minWidth: 0,
               opacity: vis ? 1 : 0,
               transform: vis ? "translateX(0)" : "translateX(24px)",
               transition: "all 0.6s ease 0.15s",
@@ -337,7 +339,7 @@ export function QuoteForm() {
                   border: "1px solid rgba(230,0,18,0.3)",
                   borderRadius: "12px",
                   textDecoration: "none",
-                  minWidth: "160px",
+                  minWidth: "240px",
                   transition: "all 0.2s",
                 }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(230,0,18,0.18)"; }}
@@ -365,7 +367,7 @@ export function QuoteForm() {
                   border: "1px solid rgba(0,85,204,0.3)",
                   borderRadius: "12px",
                   textDecoration: "none",
-                  minWidth: "160px",
+                  minWidth: "240px",
                   transition: "all 0.2s",
                 }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(0,85,204,0.18)"; }}
