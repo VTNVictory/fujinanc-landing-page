@@ -256,10 +256,11 @@ export function PortfolioSection() {
 
   return (
     <>
-      <section id="portfolio" style={{ padding: "96px 0", background: "transparent" }} ref={ref}>
+      <section id="portfolio" className="pad-section-mobile" style={{ padding: "96px 0", background: "transparent" }} ref={ref}>
         <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 32px" }}>
           {/* Header */}
           <div
+            className="flex-col-mobile align-start-mobile gap-mobile-sm"
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -303,7 +304,7 @@ export function PortfolioSection() {
           </div>
 
           {/* Grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="grid-mobile-1 gap-mobile-sm" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {PROJECTS.map((p, i) => (
               <div key={p.title} onClick={() => setActive(p)}>
                 <ProjectCard p={p} i={i} />

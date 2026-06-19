@@ -1,0 +1,88 @@
+/* 
+  Responsive Utility Classes 
+  Used with !important to override inline styles on mobile devices
+*/
+
+@media (max-width: 960px) {
+  /* Grid Layouts */
+  .grid-mobile-1 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .grid-mobile-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  /* Flexbox Layouts */
+  .flex-col-mobile {
+    flex-direction: column !important;
+  }
+  
+  .align-start-mobile {
+    align-items: flex-start !important;
+  }
+  
+  /* Spacing */
+  .pad-section-mobile {
+    padding: 60px 24px !important;
+  }
+
+  .pad-mobile-sm {
+    padding: 24px 16px !important;
+  }
+  
+  .pad-sm-mobile {
+    padding: 40px 20px !important;
+  }
+  
+  .gap-mobile-sm {
+    gap: 16px !important;
+  }
+
+  .border-none-mobile {
+    border: none !important;
+  }
+
+  /* Visibility */
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  /* Typography */
+  .heading-xl-mobile {
+    font-size: 36px !important;
+  }
+  
+  .heading-lg-mobile {
+    font-size: 28px !important;
+  }
+
+  /* Specific overrides */
+  .w-full-mobile {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .br-0-mobile {
+    border-radius: 0 !important;
+  }
+  
+  .border-none-mobile {
+    border: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Finer adjustments for smaller phones */
+  .pad-section-mobile {
+    padding: 40px 16px !important;
+  }
+  
+  .heading-xl-mobile {
+    font-size: 32px !important;
+  }
+
+  .grid-mobile-2-to-1 {
+    grid-template-columns: 1fr !important;
+  }
+}

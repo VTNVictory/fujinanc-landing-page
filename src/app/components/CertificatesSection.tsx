@@ -211,7 +211,7 @@ export function CertificatesSection() {
   }, []);
 
   return (
-    <section id="certificates" style={{ padding: "100px 0", background: "transparent", position: "relative", overflow: "hidden" }} ref={ref}>
+    <section id="certificates" className="pad-section-mobile" style={{ padding: "100px 0", background: "transparent", position: "relative", overflow: "hidden" }} ref={ref}>
       {/* Decorative Blur BG */}
       <div style={{
         position: "absolute",
@@ -268,12 +268,12 @@ export function CertificatesSection() {
 
         {/* Certificates Grid */}
         <div
+          className="grid-mobile-1 gap-mobile-sm"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "24px",
           }}
-          className="certificates-grid"
         >
           {CERTIFICATES.map((cert, index) => (
             <div

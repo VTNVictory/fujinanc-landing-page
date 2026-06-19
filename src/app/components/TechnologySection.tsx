@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import brandImg from "../../imports/image-1.png";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { CheckCircle, FlaskConical, Atom, Globe } from "lucide-react";
@@ -34,6 +34,7 @@ export function TechnologySection() {
   return (
     <section
       id="about"
+      className="pad-section-mobile"
       style={{
         background: "linear-gradient(180deg, #000d1e 0%, #001235 60%, #000d1e 100%)",
         padding: "100px 0 120px",
@@ -101,6 +102,7 @@ export function TechnologySection() {
 
         {/* Two-column layout */}
         <div
+          className="grid-mobile-1 gap-mobile-sm"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -296,6 +298,7 @@ export function TechnologySection() {
 
         {/* Milestones */}
         <div
+          className="grid-mobile-2 gap-mobile-sm"
           style={{
             marginTop: "80px",
             display: "grid",
@@ -308,6 +311,7 @@ export function TechnologySection() {
           {MILESTONES.map((m, i) => (
             <div
               key={m.year}
+              className="pad-mobile-sm border-none-mobile"
               style={{
                 padding: "0 32px",
                 borderRight: i < MILESTONES.length - 1 ? "1px solid rgba(0,85,204,0.15)" : "none",

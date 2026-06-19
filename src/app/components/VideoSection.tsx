@@ -34,7 +34,7 @@ export function VideoSection() {
 
   return (
     <>
-      <section id="videos" style={{ background: "transparent", padding: "100px 0", color: "#fff" }} ref={ref}>
+      <section id="videos" className="pad-section-mobile" style={{ background: "transparent", padding: "100px 0", color: "#fff" }} ref={ref}>
         <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 32px" }}>
           
           <div style={{
@@ -61,7 +61,7 @@ export function VideoSection() {
             </h2>
           </div>
 
-          <div style={{
+          <div className="grid-mobile-1 gap-mobile-sm" style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
             gap: "32px",

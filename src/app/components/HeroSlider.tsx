@@ -126,12 +126,12 @@ export function HeroSlider() {
     setCur((currentCur) => {
       const newIdx = ((idx % SLIDES.length) + SLIDES.length) % SLIDES.length;
       if (newIdx === currentCur) return currentCur;
-      
+
       setTextRevealed(false);
       setAnimating(true);
       animatingRef.current = true;
       setPrev(currentCur);
-      
+
       setTimeout(() => {
         setCur(newIdx);
         setTimeout(() => {
@@ -141,7 +141,7 @@ export function HeroSlider() {
           setPrev(null);
         }, 100);
       }, 500);
-      
+
       setProgress(0);
       return currentCur; // Keep it same initially, we update it in setTimeout
     });
@@ -201,8 +201,8 @@ export function HeroSlider() {
             zIndex: 0,
             opacity: i === cur ? 1 : (i === prev ? 1 : 0),
             transform: i === cur ? `scale(1.05) translate(${mousePos.x * -15}px, ${mousePos.y * -15}px)` : (i === prev ? "scale(1.08)" : "scale(1.1)"),
-            transition: i === cur 
-              ? "opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease-out" 
+            transition: i === cur
+              ? "opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease-out"
               : "opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
@@ -240,26 +240,7 @@ export function HeroSlider() {
       <FloatingParticles />
       <FloatingGeometries mousePos={mousePos} />
 
-      {/* Vertical Side Text */}
-      <div style={{
-        position: "absolute",
-        left: "32px",
-        top: "50%",
-        transform: "translateY(-50%) rotate(-90deg)",
-        transformOrigin: "left center",
-        zIndex: 5,
-        fontFamily: "'Be Vietnam Pro', sans-serif",
-        fontSize: "11px",
-        fontWeight: 600,
-        color: "rgba(255,255,255,0.2)",
-        letterSpacing: "4px",
-        textTransform: "uppercase",
-        whiteSpace: "nowrap",
-      }}
-        className="side-text"
-      >
-        THI CÔNG SƠN CHUYÊN NGHIỆP — SINCE 2012
-      </div>
+      {/* Vertical Side Text (removed per request) */}
 
       {/* Main Content */}
       <div
@@ -280,36 +261,7 @@ export function HeroSlider() {
         }}
         className="hero-main-content"
       >
-        {/* Label */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "12px",
-            marginBottom: "20px",
-            opacity: textRevealed ? 1 : 0,
-            transform: textRevealed ? "translateX(0)" : "translateX(-20px)",
-            transition: "all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s",
-          }}
-        >
-          <div style={{
-            width: "40px",
-            height: "1px",
-            background: slide.accent,
-            transition: "background 0.5s",
-          }} />
-          <span style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: "12px",
-            fontWeight: 700,
-            color: slide.accent,
-            letterSpacing: "3px",
-            textTransform: "uppercase",
-            transition: "color 0.5s",
-          }}>
-            {slide.label}
-          </span>
-        </div>
+        {/* Label removed per request to match mobile */}
 
         {/* Headline - Cinematic 2-line reveal */}
         <h1 style={{ marginBottom: "24px", paddingTop: "8px" }}>
@@ -348,24 +300,7 @@ export function HeroSlider() {
           </span>
         </h1>
 
-        {/* Sub with dots separator */}
-        <p
-          style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: "15px",
-            fontWeight: 400,
-            color: "rgba(255,255,255,0.55)",
-            lineHeight: 1.8,
-            marginBottom: "40px",
-            maxWidth: "550px",
-            letterSpacing: "0.5px",
-            opacity: textRevealed ? 1 : 0,
-            transform: textRevealed ? "translateY(0)" : "translateY(16px)",
-            transition: "all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s",
-          }}
-        >
-          {slide.sub}
-        </p>
+        {/* Sub-text removed per request to match mobile */}
 
         {/* CTAs */}
         <div
@@ -691,6 +626,9 @@ export function HeroSlider() {
         }
 
         @media (max-width: 960px) {
+          .hero-label, .hero-sub-text {
+            display: none !important;
+          }
           .hero-main-content {
             padding: 0 28px !important;
             justify-content: center !important;

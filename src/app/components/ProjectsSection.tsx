@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MapPin, ArrowRight } from "lucide-react";
 
 const PROJECTS = [
@@ -201,12 +201,14 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
+      className="pad-section-mobile"
       style={{ background: "#f0f4f8", padding: "100px 0", position: "relative" }}
       ref={ref}
     >
       <div style={{ maxWidth: "1340px", margin: "0 auto", padding: "0 40px" }}>
         {/* Header */}
         <div
+          className="flex-col-mobile align-start-mobile gap-mobile-sm"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -262,6 +264,7 @@ export function ProjectsSection() {
 
         {/* Masonry-style grid */}
         <div
+          className="grid-mobile-1 gap-mobile-sm"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",

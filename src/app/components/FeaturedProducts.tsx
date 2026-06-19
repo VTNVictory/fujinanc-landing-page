@@ -1,4 +1,4 @@
-﻿import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 const products = [
   {
@@ -55,6 +55,7 @@ export function FeaturedProducts() {
   return (
     <section
       id="products"
+      className="pad-section-mobile"
       style={{
         background: "#f4f7f6",
         padding: "100px 48px",
@@ -76,7 +77,7 @@ export function FeaturedProducts() {
 
       <div style={{ maxWidth: "1344px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         {/* Section header */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "56px" }}>
+        <div className="flex-col-mobile align-start-mobile gap-mobile-sm" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "56px" }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
               <div style={{ width: "32px", height: "1px", background: "#e60012" }} />
@@ -131,6 +132,7 @@ export function FeaturedProducts() {
 
         {/* 3-column product grid */}
         <div
+          className="grid-mobile-1 gap-mobile-sm"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",

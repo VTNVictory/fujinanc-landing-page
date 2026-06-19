@@ -23,7 +23,7 @@ export function ClientsSection() {
   }, []);
 
   return (
-    <section id="clients" style={{ background: "transparent", padding: "100px 0", overflow: "hidden" }} ref={ref}>
+    <section id="clients" className="pad-section-mobile" style={{ background: "transparent", padding: "100px 0", overflow: "hidden" }} ref={ref}>
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }

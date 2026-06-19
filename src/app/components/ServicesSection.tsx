@@ -214,6 +214,7 @@ function ServiceDetail({ svc, onClose }: { svc: Service; onClose: () => void }) 
         <div style={{ padding: "32px 28px" }}>
           {/* Highlights */}
           <div
+            className="grid-mobile-1 gap-mobile-sm"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(2, 1fr)",
@@ -361,7 +362,7 @@ function ServiceDetail({ svc, onClose }: { svc: Service; onClose: () => void }) 
           >
             Hình Ảnh Thực Tế
           </h3>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "10px", marginBottom: "32px" }}>
+          <div className="grid-mobile-1 gap-mobile-sm" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "10px", marginBottom: "32px" }}>
             {svc.gallery.map((img, i) => (
               <div key={i} style={{ borderRadius: "8px", overflow: "hidden", aspectRatio: "4/3" }}>
                 <img src={img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.3s" }}
@@ -619,7 +620,7 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section id="services" style={{ padding: "96px 0", background: "transparent" }}>
+    <section id="services" className="pad-section-mobile" style={{ padding: "96px 0", background: "transparent" }}>
       <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 32px" }} ref={ref}>
         {/* Header */}
         <div
@@ -672,6 +673,7 @@ export function ServicesSection() {
 
         {/* Grid */}
         <div
+          className="grid-mobile-1 gap-mobile-sm"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -682,7 +684,7 @@ export function ServicesSection() {
             <ServiceCard key={svc.id} svc={svc} index={i} onOpen={() => setActive(svc)} />
           ))}
           {/* Last row: 2 cards centered */}
-          <div style={{ gridColumn: "1 / -1", display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "20px", maxWidth: "760px", margin: "0 auto", width: "100%" }}>
+          <div className="grid-mobile-1 gap-mobile-sm" style={{ gridColumn: "1 / -1", display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "20px", maxWidth: "760px", margin: "0 auto", width: "100%" }}>
             {SERVICES.slice(3).map((svc, i) => (
               <ServiceCard key={svc.id} svc={svc} index={i + 3} onOpen={() => setActive(svc)} />
             ))}

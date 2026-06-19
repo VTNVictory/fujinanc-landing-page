@@ -2,6 +2,7 @@
   import { BrowserRouter } from "react-router";
   import App from "./app/App.tsx";
   import "./styles/index.css";
+  import "./styles/responsive.css";
 
   createRoot(document.getElementById("root")!).render(
     <BrowserRouter>

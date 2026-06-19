@@ -45,7 +45,7 @@ export function BlogSection() {
 
   return (
     <>
-      <section id="blog" style={{ padding: "96px 0", background: "transparent" }} ref={ref}>
+      <section id="blog" className="pad-section-mobile" style={{ padding: "96px 0", background: "transparent" }} ref={ref}>
         <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 32px" }}>
           {/* Header */}
           <div
@@ -65,7 +65,7 @@ export function BlogSection() {
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", fontWeight: 700, color: "#e60012", letterSpacing: "2.5px", textTransform: "uppercase", marginBottom: "8px" }}>
                 Kiến Thức & Tư Vấn
               </p>
-              <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "44px", fontWeight: 800, color: "#fff", letterSpacing: "-0.3px", lineHeight: 1.3 }}>
+              <h2 className="heading-xl-mobile" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "44px", fontWeight: 800, color: "#fff", letterSpacing: "-0.3px", lineHeight: 1.3 }}>
                 Bài Viết Mới Nhất
               </h2>
             </div>
@@ -89,7 +89,7 @@ export function BlogSection() {
           </div>
 
           {/* Cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "22px" }}>
+          <div className="grid-mobile-1 gap-mobile-sm" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "22px" }}>
             {POSTS.map((post, i) => {
               const [hov, setHov] = useState(false);
               const [coords, setCoords] = useState({ x: 0, y: 0 });

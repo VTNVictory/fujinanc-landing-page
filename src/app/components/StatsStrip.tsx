@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const STATS = [
   { value: 10, suffix: "+", label: "Năm Kinh Nghiệm", sublabel: "Years of excellence" },
@@ -32,6 +32,7 @@ function StatItem({ stat, active, index }: { stat: typeof STATS[0]; active: bool
   const count = useCountUp(stat.value, active);
   return (
     <div
+      className="pad-mobile-sm border-none-mobile"
       style={{
         textAlign: "center",
         padding: "40px 48px",
@@ -134,6 +135,7 @@ export function StatsStrip() {
       <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "3px", background: "linear-gradient(180deg, transparent, #e60012, transparent)" }} />
 
       <div
+        className="grid-mobile-2 gap-mobile-sm"
         style={{
           maxWidth: "1280px",
           margin: "0 auto",

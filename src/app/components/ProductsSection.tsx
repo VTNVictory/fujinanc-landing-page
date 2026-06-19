@@ -1,4 +1,4 @@
-﻿import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Check, ArrowRight, Phone, Star, Shield, Droplets, Thermometer, Palette, Eye } from "lucide-react";
 
 const PRODUCTS = [
@@ -576,6 +576,7 @@ export function ProductsSection() {
   return (
     <section
       id="products"
+      className="pad-section-mobile"
       style={{
         background: "#f0f4f8",
         padding: "100px 0 120px",
@@ -598,6 +599,7 @@ export function ProductsSection() {
       <div style={{ maxWidth: "1340px", margin: "0 auto", padding: "0 40px" }}>
         {/* Section header */}
         <div
+          className="flex-col-mobile align-start-mobile gap-mobile-sm"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -668,6 +670,7 @@ export function ProductsSection() {
 
         {/* Product grid */}
         <div
+          className="grid-mobile-1 gap-mobile-sm"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",

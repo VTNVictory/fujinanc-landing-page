@@ -70,7 +70,7 @@ export function QuoteForm() {
   };
 
   return (
-    <section id="quote" style={{ background: "transparent", padding: "96px 0", position: "relative", overflow: "hidden" }} ref={ref}>
+    <section id="quote" className="pad-section-mobile" style={{ background: "transparent", padding: "96px 0", position: "relative", overflow: "hidden" }} ref={ref}>
       {/* Background Orbs */}
       <div style={{
         position: "absolute",
@@ -106,7 +106,7 @@ export function QuoteForm() {
       </svg>
 
       <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 32px", position: "relative", zIndex: 1 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "start" }}>
+        <div className="grid-mobile-1 gap-mobile-sm" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "start" }}>
           {/* Left: form */}
           <div
             className="metallic-border"
@@ -151,7 +151,7 @@ export function QuoteForm() {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+                <div className="grid-mobile-1" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
                   {[
                     { key: "name", label: "Họ & Tên *", placeholder: "Nguyễn Văn A", type: "text" },
                     { key: "phone", label: "Số Điện Thoại *", placeholder: "0912 345 678", type: "tel" },
@@ -224,7 +224,7 @@ export function QuoteForm() {
                 </div>
 
                 {/* Area + note */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+                <div className="grid-mobile-1" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
                   <div>
                     <label style={{ display: "block", fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,0.7)", marginBottom: "6px" }}>
                       Diện Tích (m²)

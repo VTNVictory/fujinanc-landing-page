@@ -231,11 +231,12 @@ export function BrandsSection() {
   }, []);
 
   return (
-    <section id="brands" style={{ background: "transparent", padding: "100px 0" }} ref={ref}>
+    <section id="brands" className="pad-section-mobile" style={{ background: "transparent", padding: "100px 0" }} ref={ref}>
       <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 32px" }}>
         
         {/* 3D Glassmorphic Stats Grid */}
         <div
+          className="grid-mobile-2 gap-mobile-sm"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
@@ -283,7 +284,7 @@ export function BrandsSection() {
         </div>
 
         {/* 3D Glow Brand Cards Grid */}
-        <div style={{ 
+        <div className="grid-mobile-2 gap-mobile-sm" style={{ 
           display: "grid", 
           gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", 
           gap: "20px" 

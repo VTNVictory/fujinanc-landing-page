@@ -28,7 +28,7 @@ export function Footer() {
       }} />
 
       {/* Main content */}
-      <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "72px 32px 56px", display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1.4fr", gap: "56px" }}>
+      <div className="grid-mobile-1 pad-section-mobile gap-mobile-sm" style={{ maxWidth: "1360px", margin: "0 auto", padding: "72px 32px 56px", display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1.4fr", gap: "56px" }}>
         {/* Brand */}
         <div>
           <div style={{ marginBottom: "20px" }}>

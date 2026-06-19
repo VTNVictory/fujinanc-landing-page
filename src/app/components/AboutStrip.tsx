@@ -1,4 +1,4 @@
-﻿export function AboutStrip() {
+export function AboutStrip() {
   const stats = [
     { num: "10+", label: "Năm Kinh Nghiệm" },
     { num: "500+", label: "Công Trình Hoàn Thành" },
@@ -9,6 +9,7 @@
   return (
     <section
       id="about"
+      className="pad-section-mobile"
       style={{
         background: "linear-gradient(135deg, #003366 0%, #001a4d 100%)",
         padding: "64px 48px",
@@ -30,6 +31,7 @@
       </svg>
 
       <div
+        className="grid-mobile-2 gap-mobile-sm"
         style={{
           maxWidth: "1344px",
           margin: "0 auto",
@@ -43,6 +45,7 @@
         {stats.map((s, i) => (
           <div
             key={s.label}
+            className="border-none-mobile pad-sm-mobile"
             style={{
               textAlign: "center",
               padding: "0 40px",
@@ -50,6 +53,7 @@
             }}
           >
             <div
+              className="heading-xl-mobile"
               style={{
                 fontFamily: "'Montserrat', 'Be Vietnam Pro', sans-serif",
                 fontSize: "60px",

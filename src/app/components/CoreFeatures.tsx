@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Droplets, Thermometer, Shield, Palette, Zap, Award } from "lucide-react";
 
 const FEATURES = [
@@ -213,6 +213,7 @@ export function CoreFeatures() {
   return (
     <section
       id="technology"
+      className="pad-section-mobile"
       style={{ background: "#f0f4f8", padding: "100px 0", position: "relative", overflow: "hidden" }}
     >
       {/* Background decorative */}
@@ -285,6 +286,7 @@ export function CoreFeatures() {
 
         {/* 3x2 grid */}
         <div
+          className="grid-mobile-1 gap-mobile-sm"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
