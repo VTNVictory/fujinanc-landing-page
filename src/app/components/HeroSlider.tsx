@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Phone, ArrowRight, Play } from "lucide-react
 
 const SLIDES = [
   {
-    img: "https://picsum.photos/id/1057/1920/1080",
+    img: "/images/slider/epoxy_floor.png",
     label: "01 — SƠN EPOXY",
     headline: "SÀN EPOXY",
     headlineBold: "CHUẨN QUỐC TẾ",
@@ -13,7 +13,7 @@ const SLIDES = [
     accent: "#e60012",
   },
   {
-    img: "https://picsum.photos/id/1067/1920/1080",
+    img: "/images/slider/sports_court.png",
     label: "02 — SÂN THỂ THAO",
     headline: "SÂN THI ĐẤU",
     headlineBold: "ĐẲNG CẤP QUỐC TẾ",
@@ -23,7 +23,7 @@ const SLIDES = [
     accent: "#0055cc",
   },
   {
-    img: "https://picsum.photos/id/1031/1920/1080",
+    img: "/images/slider/fireproof_steel.png",
     label: "03 — CHỐNG CHÁY",
     headline: "BẢO VỆ",
     headlineBold: "KẾT CẤU THÉP",
@@ -33,7 +33,7 @@ const SLIDES = [
     accent: "#ff8800",
   },
   {
-    img: "https://picsum.photos/id/1029/1920/1080",
+    img: "/images/slider/polished_concrete.png",
     label: "04 — MÀI BÊ TÔNG",
     headline: "MÀI BÓNG",
     headlineBold: "SÀN CÔNG NGHIỆP",
